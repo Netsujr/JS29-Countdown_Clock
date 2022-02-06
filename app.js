@@ -17,11 +17,11 @@ function timer(seconds) {
   countdown = setInterval(() => {
     const secondsLeft = Math.round((then - Date.now()) / 1000);
     // check if we should stop it!
-    if (secondsLeft <= 0) {
+    if (secondsLeft < 0) {
       clearInterval(countdown);
       return;
     }
-    displayTimeLeft(seconds);
+    displayTimeLeft(secondsLeft);
   }, 1000);
 }
 
